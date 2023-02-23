@@ -1,0 +1,20 @@
+# This is a comment
+
+# This document contains a list of plan names and corresponding IDs
+# It is used to preserve the IDs of imported plans, which don't always show up
+# in the Windows power plan menu and powercfg /L
+
+# This serves as a backup in case a plan doesn't show up, in which case it will appear listed as "hidden"
+# If all of your imported plans do show up correctly
+# Entries are automatically added to this file when importing
+
+# You only need to edit this file when manually importing or deleting a power plan
+# In that case, you should add or remove an entry to/from this file as below
+
+# Entries should be formatted like:
+# PlanName|plan-GUID
+# ex:
+# Turbo|81694dcd-aead-4b1b-a189-d51bee7adc46
+
+cd5e5893-b034-423a-892e-d00da4b26572|turbo.pow
+9047f107-b820-4505-b02c-7e2b3d719837|performance.pow

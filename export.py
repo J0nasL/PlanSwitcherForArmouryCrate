@@ -5,13 +5,12 @@ import os
 import sys
 from pathlib import Path
 
-import main as lib
+from plan_lib import PlanLib as lib
 
 
 def get_fname(plan):
     while True:
-        rel_path = "./power_plans/"
-        fname = rel_path + input("Enter destination file for plan \"{0}\": ".format(plan.get_name()))
+        fname = lib.plan_storage + input("Enter destination file for plan \"{0}\": ".format(plan.get_name()))
         if os.path.isfile(fname):
             print("File already exists!")
         elif os.path.isdir(fname):
@@ -49,8 +48,8 @@ def main():
         input("Press enter to continue anyway ")
 
     print("\nPower plans:")
-    plans, active_plan = lib.get_plans()
-    lib.show_plans(plans, active_plan)
+    plans = lib.get_plans()
+    lib.print_plans(plans)
     plan = lib.choose_plan(plans, "Choose a plan to export, or press enter to quit: ")
     fname = get_fname(plan)
     export(fname, plan)
