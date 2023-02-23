@@ -10,3 +10,4 @@ To export power plans, right click export-runner.py > run as administrator.
 This file launches export.py with administrator privileges, which are required to run the export command.
 
 For Windows use only!
+Requires Python 3.x
