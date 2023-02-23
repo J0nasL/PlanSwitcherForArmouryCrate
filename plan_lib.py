@@ -67,7 +67,7 @@ class PlanLib:
             if p.is_hidden():
                 inform = True
         if inform:
-            print("Plans that were previously imported but no longer appear in powercfg list are marked as (hidden)")
+            print("Plans that were previously imported but no longer appear in powercfg list are marked as (hidden)\n")
         for index, value in enumerate(plans):
             print("{0}: {1}".format(index + 1, value.get_name()), end="")
             if value.is_active():
@@ -75,6 +75,7 @@ class PlanLib:
             if value.is_hidden():
                 print(" (hidden)", end="")
             print()
+        print()
 
     @classmethod
     def choose_plan(cls, plans, prompt):
