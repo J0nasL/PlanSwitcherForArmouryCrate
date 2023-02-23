@@ -15,3 +15,7 @@
 # PlanName|plan-GUID
 # ex:
 # Turbo|81694dcd-aead-4b1b-a189-d51bee7adc46
+
+6fecc5ae-f350-48a5-b669-b472cb895ccf|Turbo
+27fa6203-3987-4dcc-918d-748559d549ec|Performance
+64a64f24-65b9-4b56-befd-5ec1eaced9b3|Silent
