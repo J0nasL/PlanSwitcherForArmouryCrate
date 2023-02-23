@@ -1,4 +1,5 @@
 import subprocess
+from pathlib import Path
 
 import main as lib
 import os
@@ -6,24 +7,28 @@ import os
 
 def plan_import_prompt():
     while True:
-        fname = input("Enter filename of power plan to import: ")
-        if os.path.isfile(fname):
-            print("Found file \"{0}\"".format(fname))
+        fname = input("Enter filename of power plan to import from the power_plans directory: ")
+        fpath = Path.cwd().joinpath("power_plans").joinpath(fname)
+        if os.path.isfile(fpath):
+            print("Found file \"{0}\"".format(fpath))
             while True:
                 ch = input("Import this plan? (y/n): ")
                 if len(ch.strip()) == 0:
                     pass
                 elif (ch.strip().lower().startswith("y")):
-                    return (fname)
+                    return (fpath)
                 else:
                     print("Import aborted")
+                    input()
                     exit()
         else:
-            print("Could not find file \"{0}\"".format(fname))
+            print("Could not find file \"{0}\"".format(fpath))
 
 
-def import_plan(fname):
-    subprocess.run(['powercfg', '/import', fname])
+def import_plan(fpath):
+    subprocess.run(['powercfg', '/import', fpath])
+    print("\n\nDone")
+    input()
 
 
 def main():
@@ -31,9 +36,9 @@ def main():
     print("Currently registered power plans:")
     plans, active_plan = lib.get_plans()
     lib.show_plans(plans, active_plan)
-    fname = plan_import_prompt()
-    print("Importing plan from file \"{0}\"".format(fname))
-    import_plan(fname)
+    fpath = plan_import_prompt()
+    print("Importing plan from file \"{0}\"".format(fpath))
+    import_plan(fpath)
 
 
 if __name__ == '__main__':

@@ -24,11 +24,14 @@ def get_fname(plan):
                 return (fname)
             else:
                 print("Import aborted")
+                input()
                 exit()
 
 
 def export(fname, plan):
     subprocess.run(['powercfg', '/export', fname, plan.get_id()], shell=True)
+    print("\n\nDone")
+    input()
 
 def isAdmin():
     try:
