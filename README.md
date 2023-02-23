@@ -1,5 +1,5 @@
 # PlanSwitcherForArmouryCrate
-Armoury Crate is a bloated ASUS app that eats up system resources and causes crashes.
+Armoury Crate is a bloated, buggy ASUS app that eats up system resources and causes crashes.
 Its main feature is the ability to switch "operating modes" users can select to provide high performance or reduce noise.
 Under the hood, these modes are controlled using Windows Power Plans.
 
